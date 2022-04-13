@@ -1,12 +1,11 @@
-package es.juaparser.meeptest.api.repository
+package es.juaparser.meeptest
 
-import android.location.Location
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.android.gms.maps.model.LatLng
 
 import es.juaparser.meeptest.api.MarkerResponse
-import es.juaparser.meeptest.api.MeepService
+import es.juaparser.meeptest.api.repository.MarkerRepository
 
 class BlankViewModel : ViewModel() {
 

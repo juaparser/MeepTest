@@ -19,7 +19,7 @@ package es.juaparser.meeptest.api
 import com.google.gson.annotations.SerializedName
 
 data class MarkerResponse(
-    @field:SerializedName("id") val id: Int,
+    @field:SerializedName("id") val id: String,
     @field:SerializedName("name") val name: String,
     @field:SerializedName("x") val x: Float,
     @field:SerializedName("y") val y: Float,
