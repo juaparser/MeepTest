@@ -4,8 +4,16 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
+import androidx.core.text.HtmlCompat
 import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter
 import com.google.android.gms.maps.model.Marker
+
+
+/**
+ * Adapter para personalizar la ventana de los marcadores.
+ *
+ * Se parsea un string como HTML para adaptar el contenido a todos los datos de los marcadores.
+ */
 
 
 class CustomInfoWindowAdapter(context: Context) : InfoWindowAdapter {
@@ -20,8 +28,8 @@ class CustomInfoWindowAdapter(context: Context) : InfoWindowAdapter {
         }
         val snippet = marker.snippet
         val tvSnippet = view.findViewById(R.id.snippet) as TextView
-        if (snippet != "") {
-            tvSnippet.text = snippet
+        if (snippet != null && snippet != "") {
+            tvSnippet.text = HtmlCompat.fromHtml(snippet, 0)
         }
     }
 

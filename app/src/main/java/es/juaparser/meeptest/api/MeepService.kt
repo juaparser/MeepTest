@@ -1,7 +1,5 @@
 package es.juaparser.meeptest.api
 
-import android.location.Location
-import android.util.Log
 import com.google.android.gms.maps.model.LatLng
 import com.google.gson.GsonBuilder
 import retrofit2.Call
@@ -49,9 +47,9 @@ class MeepService {
     var meepService = retrofit.create(MyApiEndpointInterface::class.java)
 
     fun getMarkers(lowerLeftLocation: LatLng, upperRightLatLon: LatLng, res: (markers: List<MarkerResponse>) -> Unit) {
-        val lowerleft = "" + lowerLeftLocation.latitude + "," + lowerLeftLocation.longitude
-        val upperright = "" + upperRightLatLon.latitude + "," + upperRightLatLon.longitude
-        val call: Call<List<MarkerResponse>> = meepService.getMarkers(lowerleft, upperright)
+        val lowerLeft = "" + lowerLeftLocation.latitude + "," + lowerLeftLocation.longitude
+        val upperRight = "" + upperRightLatLon.latitude + "," + upperRightLatLon.longitude
+        val call: Call<List<MarkerResponse>> = meepService.getMarkers(lowerLeft, upperRight)
         call.enqueue(object : Callback<List<MarkerResponse>> {
             override fun onResponse(call: Call<List<MarkerResponse>>, response: Response<List<MarkerResponse>>) {
                 val data = response.body()

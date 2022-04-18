@@ -7,7 +7,11 @@ import com.google.android.gms.maps.model.LatLng
 import es.juaparser.meeptest.api.MarkerResponse
 import es.juaparser.meeptest.api.repository.MarkerRepository
 
-class BlankViewModel : ViewModel() {
+/**
+ * Viewmodel para gestionar los datos del repositorio y mandarlos al fragmento.
+ */
+
+class MapViewModel : ViewModel() {
 
     private val repository = MarkerRepository()
     var markers = MutableLiveData<MutableList<MarkerResponse>>(mutableListOf())
